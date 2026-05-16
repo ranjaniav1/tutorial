@@ -1,5 +1,7 @@
 ---
-
+import Navigation from "../components/Navigation.astro";
+import Social from "../components/Social.astro";
+import Footer from "../components/Footer.astro";
 ---
 
 <html lang="en">
@@ -12,7 +14,15 @@
 		<title>Astro</title>
 	</head>
 	<body>
+		<Navigation />
 		<h1>Astro Home</h1>
 		<h1>Astro Home</h1>
+		<Social platform="twitter" username="astrodotbuild" />
+		<Social platform="github" username="withastro" />
+		<Social platform="youtube" username="astrodotbuild" />
+		<Footer />
+		<script>
+			import "../script/menu.js";
+		</script>
 	</body>
 </html>
