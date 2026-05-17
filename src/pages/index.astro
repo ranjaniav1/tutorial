@@ -7,5 +7,5 @@ const homepage = await getEntry("homepage", "index");
 ---
 
 <BaseLayout title="Varsani DevBlog">
-    <Hero {...homepage.data} />
-</BaseLayout>
+    {homepage && <Hero {...homepage.data} />}</BaseLayout
+>
