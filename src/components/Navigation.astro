@@ -5,10 +5,14 @@ import "../styles/nav.css";
 
 const nav = await getEntry("navigation", "config");
 
-console.log(nav);
+console.log("nav", nav);
 
 const data = nav?.data;
 ---
+
+<h1>
+    {data?.logo}
+</h1>
 
 <header class="navbar">
     <div class="container navbar-wrapper">
