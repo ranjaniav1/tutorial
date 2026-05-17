@@ -13,4 +13,8 @@ stats:
   - number: 10+
     label: Projects
     icon: ⭐
+  - number: ''
+    label: Beginner Friendly
+    icon:
 ---
+<img src="/uploads/graduation-cap.png" alt="graduation-cap" loading="lazy" />
