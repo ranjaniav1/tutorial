@@ -1,0 +1,22 @@
+{
+    "logo": "Varsani DevBlog",
+    "links": [
+        {
+            "label": "Home",
+            "href": "/"
+        },
+        {
+            "label": "Series",
+            "href": "/series",
+            "badge": "New"
+        },
+        {
+            "label": "Blog",
+            "href": "/blog"
+        }
+    ],
+    "button": {
+        "label": "Start Learning",
+        "href": "/series"
+    }
+}
