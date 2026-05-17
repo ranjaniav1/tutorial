@@ -21,6 +21,13 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
+  content:
+    path: src/content
+    icon: wysiwyg
+    disable_url: false
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
 timezone: Asia/Calcutta
 markdown:
   engine: commonmark
