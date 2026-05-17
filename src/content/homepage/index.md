@@ -2,7 +2,9 @@
 badge: 🚀 Start Your Python Journey
 title: Learn Python
 highlight: From Scratch
-description: Beginner to Advanced-  step-by-step tutorials with real examples and hands-on-projects.
+description: >-
+  Beginner to Advanced-  step-by-step tutorials with real examples and
+  hands-on-projects.
 buttonText: Explore All Lessons
 buttonLink: /python
 image: /images/hero-py.jpg
@@ -15,6 +17,6 @@ stats:
     icon: ⭐
   - number: ''
     label: Beginner Friendly
-    icon:
+    icon: 🎓
 ---
 <img src="/uploads/graduation-cap.png" alt="graduation-cap" loading="lazy" />
