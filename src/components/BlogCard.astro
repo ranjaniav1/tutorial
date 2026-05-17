@@ -1,0 +1,55 @@
+---
+const { title, description, category, href } = Astro.props;
+---
+
+<a href={href} class="blog-card">
+    <span class="category">{category}</span>
+
+    <h3>{title}</h3>
+
+    <p>{description}</p>
+
+    <div class="read-more">Read Article →</div>
+</a>
+
+<style>
+    .blog-card {
+        display: block;
+        background: #111827;
+        border: 1px solid #1e293b;
+        border-radius: 20px;
+        padding: 1.8rem;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        border-color: #38bdf8;
+    }
+
+    .category {
+        display: inline-block;
+        background: #0f172a;
+        color: #38bdf8;
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+    }
+
+    h3 {
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        color: #94a3b8;
+        margin-bottom: 1.5rem;
+    }
+
+    .read-more {
+        color: #38bdf8;
+        font-weight: 600;
+    }
+</style>

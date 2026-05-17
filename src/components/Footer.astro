@@ -1,22 +1,106 @@
----
-// src/components/Footer.astro
-const year = new Date().getFullYear();
----
+<footer class="footer">
+  <div class="container footer-grid">
+    <div>
+      <h2>Varsani DevBlog</h2>
 
-<footer class="border-t border-[var(--border)] py-8 mt-12">
-    <div
-        class="max-w-[800px] mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4"
-    >
-        <p class="text-xs text-neutral-500 uppercase tracking-widest">
-            &copy; {year} Ranjani Varsani
-        </p>
-        <div class="flex gap-4">
-            <a
-                href="[https://github.com](https://github.com)"
-                class="text-xs text-neutral-500 hover:text-white underline underline-offset-4"
-                >GitHub</a
-            >
-            <a href="https:"></a>
-        </div>
+      <p>
+        Learn Python, JavaScript &
+        Spoken English with practical tutorials.
+      </p>
     </div>
+
+    <div>
+      <h4>Quick Links</h4>
+
+      <ul>
+        <li><a href="/python">Python</a></li>
+        <li><a href="/javascript">JavaScript</a></li>
+        <li><a href="/spoken-english">Spoken English</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>Connect</h4>
+
+      <ul>
+        <li>
+          <a href="https://github.com">
+            GitHub
+          </a>
+        </li>
+
+        <li>
+          <a href="https://linkedin.com">
+            LinkedIn
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bottom">
+    © 2026 Varsani DevBlog. All rights reserved.
+  </div>
 </footer>
+
+<style>
+  .footer {
+    margin-top: 5rem;
+    border-top: 1px solid #1e293b;
+    padding-top: 4rem;
+    background: #020617;
+  }
+
+  .container {
+    width: min(1200px, 90%);
+    margin: auto;
+  }
+
+  .footer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+  }
+
+  h2,
+  h4 {
+    color: white;
+    margin-bottom: 1rem;
+  }
+
+  p,
+  a {
+    color: #94a3b8;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 0.8rem;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #38bdf8;
+  }
+
+  .bottom {
+    margin-top: 3rem;
+    text-align: center;
+    padding: 1.5rem;
+    border-top: 1px solid #1e293b;
+    color: #64748b;
+  }
+
+  @media (max-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

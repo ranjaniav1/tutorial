@@ -1,28 +1,39 @@
 ---
-import Navigation from "../components/Navigation.astro";
-import Social from "../components/Social.astro";
-import Footer from "../components/Footer.astro";
+import Hero from "../components/Hero.astro";
+
+import LearningPathCard from "../components/LearningPathCard.astro";
+
+import BlogCard from "../components/BlogCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<Navigation />
-		<h1>Astro Home</h1>
-		<h1>Astro Home</h1>
-		<Social platform="twitter" username="astrodotbuild" />
-		<Social platform="github" username="withastro" />
-		<Social platform="youtube" username="astrodotbuild" />
-		<Footer />
-		<script>
-			import "../script/menu.js";
-		</script>
-	</body>
-</html>
+<BaseLayout title="Varsani DevBlog">
+	<Hero />
+
+	<section class="section container">
+		<h2>Learning Paths</h2>
+
+		<div class="grid">
+			<LearningPathCard
+				title="Python"
+				description="Master Python from basics to projects."
+				icon="🐍"
+				href="/python"
+			/>
+
+			<LearningPathCard
+				title="JavaScript"
+				description="Modern JavaScript tutorials and DOM projects."
+				icon="⚡"
+				href="/javascript"
+			/>
+
+			<LearningPathCard
+				title="Spoken English"
+				description="Improve communication and speaking confidence."
+				icon="🗣"
+				href="/spoken-english"
+			/>
+		</div>
+	</section>
+</BaseLayout>

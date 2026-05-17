@@ -1,7 +1,47 @@
 ---
+import { getEntry } from "astro:content";
 
+import "../styles/nav.css";
+
+const nav = await getEntry("navigation", "config");
 ---
 
-<a href="/">Home</a>
-<a href="/about/">About</a>
-<a href="/blog/">Blog</a>
+<header class="navbar">
+    <div class="container navbar-wrapper">
+        <!-- logo -->
+
+        <a href="/" class="logo">
+            <span class="logo-text">
+                {nav.logo}
+            </span>
+        </a>
+
+        <!-- nav -->
+
+        <nav class="nav-menu">
+            <ul class="nav-list">
+                {
+                    nav.links.map((link: any) => (
+                        <li>
+                            <a href={link.href}>
+                                {link.label}
+
+                                {link.badge && (
+                                    <span class="nav-badge">{link.badge}</span>
+                                )}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </nav>
+
+        <!-- button -->
+
+        <div class="nav-actions">
+            <a href={nav.button.href} class="btn-primary">
+                {nav.button.label}
+            </a>
+        </div>
+    </div>
+</header>

@@ -1,54 +1,137 @@
-/* nav styles */
-.menu {
-  background-color: #0d0950;
-  border: none;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: bold;
-  padding: 5px 10px;
+:root {
+  /* colors */
+
+  --primary: #142850;
+  --secondary: #2563eb;
+
+  --text: #0f172a;
+  --text-light: #64748b;
+
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+
+  --border: #e2e8f0;
+
+  /* button */
+
+  --btn-bg: var(--secondary);
+  --btn-hover: #1d4ed8;
+  --btn-text: #ffffff;
+
+  /* navbar */
+
+  --nav-bg: rgba(255, 255, 255, 0.9);
+
+  /* typography */
+
+  --heading-font: "Sora", sans-serif;
+  --body-font: "Inter", sans-serif;
+  --code-font: "JetBrains Mono", monospace;
+
+  /* radius */
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+
+  /* shadow */
+
+  --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+
+  --shadow-md:
+    0 4px 20px rgba(15, 23, 42, 0.08);
+
+  /* transition */
+
+  --transition: 0.2s ease;
+
+  /* layout */
+
+  --container: 1280px;
+
+  --nav-height: 76px;
 }
 
-.nav-links {
-  width: 100%;
-  display: none;
+
+
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.nav-links a {
-  display: block;
-  text-align: center;
-  padding: 10px 0;
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+
+  color: var(--text);
+
+  font-family: var(--body-font);
+
+  line-height: 1.7;
+
+  overflow-x: hidden;
+
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
   text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #0d0950;
+
+  color: inherit;
 }
 
-.nav-links a:hover,
-.nav-links a:focus{
-  background-color: #ff9776;
+img {
+  max-width: 100%;
+
+  display: block;
 }
 
-:has(.menu[aria-expanded="true"]) .nav-links {
-  display: unset;
+ul {
+  list-style: none;
 }
 
-@media screen and (min-width: 636px) {
-  .nav-links {
-    margin-left: 5em;
-    display: block;
-    position: static;
-    width: auto;
-    background: none;
-  }
+.container {
+  width: min(100% - 2rem, var(--container));
 
-  .nav-links a {
-    display: inline-block;
-    padding: 15px 20px;
-  }
+  margin-inline: auto;
+}
 
-  .menu {
-    display: none;
-  }
+.main-content {
+  padding-top: var(--nav-height);
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(280px, 1fr));
+
+  gap: 2rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--heading-font);
+
+  color: var(--primary);
+
+  line-height: 1.2;
+}
+
+p {
+  color: var(--text-light);
 }

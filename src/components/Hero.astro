@@ -1,0 +1,170 @@
+<section class="hero">
+  <div class="container hero-grid">
+    <div class="hero-content">
+      <p class="badge">🚀 Learn & Grow</p>
+
+      <h1>
+        Learn Python, JavaScript & Spoken English
+      </h1>
+
+      <p class="description">
+        Practical tutorials, structured learning paths,
+        and real-world examples for developers and learners.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="/python" class="btn primary">
+          Start Learning
+        </a>
+
+        <a href="/spoken-english" class="btn secondary">
+          Spoken English
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="code-window">
+        <div class="dots">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <pre>
+<code>
+print("Hello Learners 🚀")
+
+const future = "Developer";
+
+speakEnglish.daily();
+</code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    padding: 6rem 0;
+  }
+
+  .container {
+    width: min(1200px, 90%);
+    margin: auto;
+  }
+
+  .hero-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #1e293b;
+    border-radius: 999px;
+    color: #38bdf8;
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-size: 4rem;
+    line-height: 1.1;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+
+  .description {
+    color: #94a3b8;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .btn {
+    padding: 0.9rem 1.4rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+  }
+
+  .primary {
+    background: #38bdf8;
+    color: #0f172a;
+  }
+
+  .primary:hover {
+    transform: translateY(-3px);
+  }
+
+  .secondary {
+    border: 1px solid #334155;
+    color: white;
+  }
+
+  .hero-card {
+    background: linear-gradient(
+      135deg,
+      #1e293b,
+      #0f172a
+    );
+    border-radius: 24px;
+    padding: 2rem;
+    border: 1px solid #334155;
+  }
+
+  .code-window {
+    background: #020617;
+    border-radius: 16px;
+    overflow: hidden;
+  }
+
+  .dots {
+    display: flex;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  .dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+  }
+
+  .dots span:nth-child(1) {
+    background: #ef4444;
+  }
+
+  .dots span:nth-child(2) {
+    background: #facc15;
+  }
+
+  .dots span:nth-child(3) {
+    background: #22c55e;
+  }
+
+  pre {
+    padding: 2rem;
+    color: #38bdf8;
+    overflow-x: auto;
+  }
+
+  @media (max-width: 900px) {
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+    }
+  }
+</style>
