@@ -11,7 +11,7 @@ const {
 } = Astro.props;
 ---
 
-<section class="hero section">
+<section class="section">
     <div class="container hero-wrapper">
         <!-- content -->
 
@@ -64,14 +64,10 @@ const {
 <style>
     .hero-wrapper {
         display: grid;
-
         grid-template-columns: repeat(2, 1fr);
-
         align-items: center;
-
         gap: 4rem;
-
-        min-height: calc(100vh - var(--nav-height));
+        min-height: calc(60vh - var(--nav-height));
     }
 
     .hero-content {
@@ -85,25 +81,13 @@ const {
 
         gap: 0.5rem;
 
-        padding: 0.55rem 1rem;
-
         margin-bottom: 1.5rem;
 
-        border-radius: 999px;
-
-        background: rgba(37, 99, 235, 0.08);
-
-        border: 1px solid rgba(37, 99, 235, 0.15);
-
-        color: var(--secondary);
-
         font-size: 0.9rem;
-
-        font-weight: 600;
     }
 
     h1 {
-        font-size: clamp(3rem, 6vw, 5rem);
+        font-size: clamp(2rem, 4vw, 3.5rem);
 
         margin-bottom: 1.25rem;
 
@@ -111,15 +95,16 @@ const {
     }
 
     h1 span {
-        color: var(--secondary);
+        color: var(--bg-button);
     }
 
     .hero-content p {
-        max-width: 560px;
-
+        max-width: 500px;
+        font-weight: 400;
+        line-height: 1.5;
+        font-size: 1rem;
         margin-bottom: 2rem;
-
-        font-size: 1.1rem;
+        word-spacing: 10px;
     }
 
     .hero-stats {

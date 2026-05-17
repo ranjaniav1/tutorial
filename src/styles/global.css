@@ -1,32 +1,41 @@
+
 :root {
   /* colors */
 
-  --primary: #142850;
-  --secondary: #2563eb;
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --text-heading: #0f172a;
+  --text-card: #fff;
+  --text-button: #fff;
+  --text-border: #cbd5e1;
 
-  --text: #0f172a;
-  --text-light: #64748b;
+  --bg-navigation: #f8fafc;
+  --bg-card: #fff;
+  --bg-header: #f8fafc;
+  --bg-button: #1e3a8a;
 
   --bg: #f8fafc;
   --surface: #ffffff;
   --surface-soft: #f1f5f9;
 
-  --border: #e2e8f0;
+  --icon-default:#0284c7;
+  --icon-main:#1e3a8a;
+
 
   /* button */
 
-  --btn-bg: var(--secondary);
+  --btn-bg: var(--bg-button);
   --btn-hover: #1d4ed8;
-  --btn-text: #ffffff;
+  --btn-text: var(--text-button);
 
   /* navbar */
 
-  --nav-bg: rgba(255, 255, 255, 0.9);
+  --nav-bg: var(--bg-navigation);
 
   /* typography */
 
   --heading-font: "Sora", sans-serif;
-  --body-font: "Inter", sans-serif;
+  --body-font: "Roboto", Helvetica, Arial, sans-serif;
   --code-font: "JetBrains Mono", monospace;
 
   /* radius */
@@ -69,7 +78,7 @@ html {
 body {
   background: var(--bg);
 
-  color: var(--text);
+  color: var(--text-secondary);
 
   font-family: var(--body-font);
 
@@ -106,9 +115,6 @@ ul {
   padding-top: var(--nav-height);
 }
 
-.section {
-  padding-block: 5rem;
-}
 
 .grid {
   display: grid;
@@ -127,13 +133,13 @@ h5,
 h6 {
   font-family: var(--heading-font);
 
-  color: var(--primary);
+  color: var(--text-heading);
 
   line-height: 1.2;
 }
 
 p {
-  color: var(--text-light);
+  color: var(--text-secondary);
 }
 
 /* reusable button */
@@ -148,9 +154,9 @@ p {
 
   border-radius: var(--radius-md);
 
-  background: var(--btn-bg);
+  background: var(--bg-button);
 
-  color: var(--btn-text);
+  color: var(--text-button);
 
   font-weight: 600;
 

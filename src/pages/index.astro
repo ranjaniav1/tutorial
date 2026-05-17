@@ -1,12 +1,10 @@
 ---
-import { getEntry } from "astro:content";
-
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
-const homepage = await getEntry("homepage", "index");
-console.log("home", homepage);
+import { getEntry } from "astro:content";
+const homepage = await getEntry("Home", "index");
 ---
 
 <BaseLayout title="Varsani DevBlog">
-    {homepage && <Hero {...homepage.data} />}</BaseLayout
+    {homepage && homepage.data && <Hero {...homepage.data} />}</BaseLayout
 >

@@ -1,6 +1,14 @@
-import { defineCollection, z } from "astro:content";
+import { glob, file } from "astro/loaders";
+import { z } from "astro/zod";
+import { defineCollection } from "astro:content";
 
-const homepage = defineCollection({
+
+const Home = defineCollection({
+    loader: glob({
+        base: './src/content/homepage',
+        pattern: "**/*.{md,mdx}",
+
+    }),
     schema: z.object({
         badge: z.string(),
 
@@ -29,5 +37,5 @@ const homepage = defineCollection({
 });
 
 export const collections = {
-    homepage,
+    Home,
 };
