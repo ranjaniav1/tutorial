@@ -4,6 +4,10 @@ import { getEntry } from "astro:content";
 import "../styles/nav.css";
 
 const nav = await getEntry("navigation", "config");
+
+console.log(nav);
+
+const data = nav?.data;
 ---
 
 <header class="navbar">
@@ -12,7 +16,7 @@ const nav = await getEntry("navigation", "config");
 
         <a href="/" class="logo">
             <span class="logo-text">
-                {nav.logo}
+                {data?.logo}
             </span>
         </a>
 
@@ -21,7 +25,7 @@ const nav = await getEntry("navigation", "config");
         <nav class="nav-menu">
             <ul class="nav-list">
                 {
-                    nav.links.map((link: any) => (
+                    data?.links.map((link: any) => (
                         <li>
                             <a href={link.href}>
                                 {link.label}
@@ -39,8 +43,8 @@ const nav = await getEntry("navigation", "config");
         <!-- button -->
 
         <div class="nav-actions">
-            <a href={nav.button.href} class="btn-primary">
-                {nav.button.label}
+            <a href={data?.button.href} class="btn-primary">
+                {data?.button.label}
             </a>
         </div>
     </div>
