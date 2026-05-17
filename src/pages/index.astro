@@ -1,9 +1,11 @@
 ---
-
+import { getEntry } from "astro:content";
 
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+const homepage = await getEntry("homepage", "index");
 ---
 
 <BaseLayout title="Varsani DevBlog">
-	
+    <Hero {...homepage.data} />
 </BaseLayout>

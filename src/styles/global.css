@@ -135,3 +135,54 @@ h6 {
 p {
   color: var(--text-light);
 }
+
+/* reusable button */
+
+.btn-primary {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 0.9rem 1.4rem;
+
+  border-radius: var(--radius-md);
+
+  background: var(--btn-bg);
+
+  color: var(--btn-text);
+
+  font-weight: 600;
+
+  transition: var(--transition);
+
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-primary:hover {
+  background: var(--btn-hover);
+
+  transform: translateY(-2px);
+}
+
+/* reusable card */
+
+.card {
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  border-radius: var(--radius-md);
+
+  padding: 1rem 1.2rem;
+
+  box-shadow: var(--shadow-sm);
+
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-md);
+}
