@@ -1,100 +1,117 @@
+---
+import { footerData } from "../data/footer";
+---
+
 <footer class="footer">
   <div class="container footer-grid">
+    <!-- brand -->
+
     <div>
-      <h2>Varsani DevBlog</h2>
+      <h2>{footerData.brand.title}</h2>
 
       <p>
-        Learn Python, JavaScript &
-        Spoken English with practical tutorials.
+        {footerData.brand.description}
       </p>
     </div>
+
+    <!-- quick links -->
 
     <div>
       <h4>Quick Links</h4>
 
       <ul>
-        <li><a href="/python">Python</a></li>
-        <li><a href="/javascript">JavaScript</a></li>
-        <li><a href="/spoken-english">Spoken English</a></li>
+        {
+          footerData.quickLinks.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))
+        }
       </ul>
     </div>
+
+    <!-- connect -->
 
     <div>
       <h4>Connect</h4>
 
       <ul>
-        <li>
-          <a href="https://github.com">
-            GitHub
-          </a>
-        </li>
-
-        <li>
-          <a href="https://linkedin.com">
-            LinkedIn
-          </a>
-        </li>
+        {
+          footerData.connectLinks.map((link) => (
+            <li>
+              <a href={link.href} target="_blank" rel="noopener noreferrer">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
 
-  <div class="bottom">
-    © 2026 Varsani DevBlog. All rights reserved.
+  <div class="footer-bottom">
+    {footerData.copyright}
   </div>
 </footer>
 
 <style>
   .footer {
     margin-top: 5rem;
-    border-top: 1px solid #1e293b;
-    padding-top: 4rem;
-    background: #020617;
-  }
 
-  .container {
-    width: min(1200px, 90%);
-    margin: auto;
+    padding-top: 4rem;
+
+    background: #020617;
+
+    border-top: 1px solid #1e293b;
   }
 
   .footer-grid {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 3rem;
   }
 
-  h2,
-  h4 {
+  .footer h2,
+  .footer h4 {
     color: white;
+
     margin-bottom: 1rem;
   }
 
-  p,
-  a {
+  .footer p,
+  .footer a {
     color: #94a3b8;
   }
 
-  ul {
+  .footer ul {
     list-style: none;
-    padding: 0;
   }
 
-  li {
+  .footer li {
     margin-bottom: 0.8rem;
   }
 
-  a {
+  .footer a {
     text-decoration: none;
+
+    transition: var(--transition);
   }
 
-  a:hover {
+  .footer a:hover {
     color: #38bdf8;
   }
 
-  .bottom {
+  .footer-bottom {
     margin-top: 3rem;
-    text-align: center;
+
     padding: 1.5rem;
+
+    text-align: center;
+
     border-top: 1px solid #1e293b;
+
     color: #64748b;
   }
 

@@ -2,9 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Hero from "../components/Hero.astro";
 import { getEntry } from "astro:content";
+import LearningPath from "../components/LearningPath.astro";
+import FeaturedArticles from "../components/FeaturedArticles.astro";
 const homepage = await getEntry("Home", "index");
 ---
 
 <BaseLayout title="Varsani DevBlog">
-    {homepage && homepage.data && <Hero {...homepage.data} />}</BaseLayout
->
+    {homepage && homepage.data && <Hero {...homepage.data} />}
+
+    <LearningPath categories={homepage?.data?.categories} />
+    <FeaturedArticles latestArticles={homepage?.data?.latestArticles} />
+</BaseLayout>

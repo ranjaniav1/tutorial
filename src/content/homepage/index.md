@@ -18,5 +18,56 @@ stats:
   - number: ''
     label: Beginner Friendly
     icon: 🎓
+
+
+
+
+categories:
+  - title: Python
+    lessons: 40
+    image: /uploads/python.png
+    slug: /series/python
+
+  - title: JavaScript
+    lessons: 32
+    image: /uploads/javascript.png
+    slug: /series/javascript
+
+  - title: React
+    lessons: 28
+    image: /uploads/react.png
+    slug: /series/react
+
+  - title: Spoken English
+    lessons: 25
+    image: /uploads/english.png
+    slug: /series/english
+
+
+
+latestArticles:
+  - title: Python Variables Explained
+    description: Learn Python variables with simple examples and exercises.
+    category: Python
+    image: /uploads/python-article.jpg
+    slug: /blog/python-variables
+    date: 2026-05-15
+    readTime: 6 min read
+
+  - title: JavaScript Arrays Basics
+    description: Understand JavaScript arrays step-by-step for beginners.
+    category: JavaScript
+    image: /uploads/javascript-article.jpg
+    slug: /blog/javascript-arrays
+    date: 2026-05-17
+    readTime: 5 min read
+
+  - title: Daily English Speaking Practice
+    description: Improve spoken English using daily-use sentences.
+    category: English
+    image: /uploads/english-speaking.jpg
+    slug: /blog/daily-english-practice
+    date: 2026-05-10
+    readTime: 4 min read
 ---
 <img src="/uploads/graduation-cap.png" alt="graduation-cap" loading="lazy" />

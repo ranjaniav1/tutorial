@@ -1,0 +1,19 @@
+---
+const { tag, title, action, url } = Astro.props;
+---
+
+<div class="section-header">
+    <div>
+        <span class="section-tag"> {tag} </span>
+
+        <h2>{title}</h2>
+    </div>
+
+    {
+        action && (
+            <a href={url} class="btn-primary">
+                {action}
+            </a>
+        )
+    }
+</div>

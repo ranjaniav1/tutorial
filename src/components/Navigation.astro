@@ -3,10 +3,8 @@ import { getEntry } from "astro:content";
 
 import "../styles/nav.css";
 
-const nav = await getEntry("navigation", "config");
-
-
-const data = nav?.data;
+import { navigation } from "../data/navigation";
+const data = navigation;
 ---
 
 <h1>

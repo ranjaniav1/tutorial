@@ -1,0 +1,123 @@
+---
+const { title, description, category, image, slug, date, readTime } =
+    Astro.props;
+
+const formattedDate = date.toLocaleDateString("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+});
+---
+
+<a href={slug} class="article-card">
+    <div class="article-image">
+        <img src={image} alt={title} loading="lazy" />
+    </div>
+
+    <div class="article-content">
+        <span class="article-category">
+            {category}
+        </span>
+
+        <h3>{title}</h3>
+
+        <p>{description}</p>
+        <div class="article-meta">
+            <span>{formattedDate}</span>
+
+            <span>•</span>
+
+            <span>{readTime}</span>
+        </div>
+        <span class="read-more"> Read Article → </span>
+    </div>
+</a>
+
+<style>
+    .article-card {
+        background: var(--surface);
+
+        border: 1px solid var(--text-border);
+
+        border-radius: var(--radius-lg);
+
+        overflow: hidden;
+
+        transition: var(--transition);
+
+        box-shadow: var(--shadow-sm);
+
+        display: flex;
+
+        flex-direction: column;
+    }
+
+    .article-card:hover {
+        transform: translateY(-6px);
+
+        box-shadow: var(--shadow-md);
+    }
+
+    .article-image img {
+        width: 100%;
+
+        height: 220px;
+
+        object-fit: cover;
+    }
+
+    .article-content {
+        padding: 1.5rem;
+    }
+
+    .article-category {
+        display: inline-flex;
+
+        margin-bottom: 1rem;
+
+        padding: 0.35rem 0.8rem;
+
+        border-radius: 999px;
+
+        background: rgba(30, 58, 138, 0.08);
+
+        color: var(--icon-main);
+
+        font-size: 0.85rem;
+
+        font-weight: 600;
+    }
+
+    .article-content h3 {
+        margin-bottom: 0.85rem;
+
+        line-height: 1.4;
+    }
+
+    .article-content p {
+        margin-bottom: 1.25rem;
+
+        font-size: 0.96rem;
+    }
+
+    .read-more {
+        color: var(--icon-main);
+
+        font-weight: 600;
+
+        font-size: 0.95rem;
+    }
+    .article-meta {
+        display: flex;
+
+        align-items: center;
+
+        gap: 0.5rem;
+
+        margin-top: 1rem;
+
+        color: var(--text-secondary);
+
+        font-size: 0.9rem;
+    }
+</style>

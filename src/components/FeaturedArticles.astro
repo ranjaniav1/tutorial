@@ -1,0 +1,25 @@
+---
+import FeaturedArticleCard from "./FeaturedArticleCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+
+const { latestArticles = [] } = Astro.props;
+---
+
+<section class="section">
+    <div class="container">
+        <SectionHeader
+            tag="Latest Articles"
+            title="Newest Blog Posts"
+            url="/blog"
+            action="View All Posts"
+        />
+
+        <div class="grid">
+            {
+                latestArticles.map((article: any) => (
+                    <FeaturedArticleCard {...article} />
+                ))
+            }
+        </div>
+    </div>
+</section>

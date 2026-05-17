@@ -1,0 +1,32 @@
+---
+import LearningCard from "./LearningCard.astro";
+import SectionHeader from "./SectionHeader.astro";
+const { categories = [] } = Astro.props;
+---
+
+<section class="section learning-paths">
+    <div class="container">
+        <SectionHeader
+            title="Trending Categories"
+            action="Browse All"
+            url="/series"
+        />
+        <div class="grid-auto">
+            {categories.map((item: any) => <LearningCard {...item} />)}
+        </div>
+    </div>
+</section>
+
+<style>
+    .learning-paths {
+        padding: 5rem 0;
+    }
+
+    @media (max-width: 768px) {
+        .section-header {
+            flex-direction: column;
+
+            align-items: flex-start;
+        }
+    }
+</style>

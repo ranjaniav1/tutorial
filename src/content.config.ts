@@ -11,28 +11,39 @@ const Home = defineCollection({
     }),
     schema: z.object({
         badge: z.string(),
-
         title: z.string(),
-
         highlight: z.string(),
-
         description: z.string(),
-
         buttonText: z.string(),
-
         buttonLink: z.string(),
-
         image: z.string(),
 
         stats: z.array(
             z.object({
                 number: z.string(),
-
                 label: z.string(),
-
                 icon: z.string(),
             }),
         ),
+        categories: z.array(
+            z.object({
+                title: z.string(),
+                lessons: z.number(),
+                image: z.string(),
+                slug: z.string()
+            })
+        ),
+        latestArticles: z.array(
+            z.object({
+                title: z.string(),
+                description: z.string(),
+                category: z.enum(["Python", "JavaScript", "React", "English"]),
+                image: z.string(),
+                slug: z.string(),
+                date: z.date(),
+                readTime: z.string(),
+            })
+        )
     }),
 });
 
