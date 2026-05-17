@@ -21,7 +21,25 @@ collections_config:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
-  content:
+  data:
+    path: src/data
+    icon: data_object
+    disable_url: true
+
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      icon_background_color:
+      image:
+      metadata:
+      gallery:
+
+    disable_add: false
+    disable_add_folder: false
+    disable_file_actions: false
+  content:  
     path: src/content
     icon: wysiwyg
     disable_url: false
