@@ -25,6 +25,15 @@ collections_config:
     path: src/content
     icon: wysiwyg
     disable_url: false
+    preview:
+      text:
+      subtext:
+      icon:
+      icon_color:
+      icon_background_color:
+      image:
+      metadata:
+      gallery:
     disable_add: false
     disable_add_folder: false
     disable_file_actions: false
