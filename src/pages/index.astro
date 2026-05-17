@@ -1,39 +1,9 @@
 ---
-import Hero from "../components/Hero.astro";
 
-import LearningPathCard from "../components/LearningPathCard.astro";
 
-import BlogCard from "../components/BlogCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout title="Varsani DevBlog">
-	<Hero />
-
-	<section class="section container">
-		<h2>Learning Paths</h2>
-
-		<div class="grid">
-			<LearningPathCard
-				title="Python"
-				description="Master Python from basics to projects."
-				icon="🐍"
-				href="/python"
-			/>
-
-			<LearningPathCard
-				title="JavaScript"
-				description="Modern JavaScript tutorials and DOM projects."
-				icon="⚡"
-				href="/javascript"
-			/>
-
-			<LearningPathCard
-				title="Spoken English"
-				description="Improve communication and speaking confidence."
-				icon="🗣"
-				href="/spoken-english"
-			/>
-		</div>
-	</section>
+	
 </BaseLayout>
