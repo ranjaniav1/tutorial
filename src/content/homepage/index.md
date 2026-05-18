@@ -18,7 +18,6 @@ stats:
   - number: ''
     label: Beginner Friendly
     icon: 🎓
-
 latestArticles:
   - title: Python Variables Explained
     description: Learn Python variables with simple examples and exercises.
