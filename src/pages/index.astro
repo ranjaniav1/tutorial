@@ -5,11 +5,12 @@ import { getEntry } from "astro:content";
 import LearningPath from "../components/LearningPath.astro";
 import FeaturedArticles from "../components/FeaturedArticles.astro";
 const homepage = await getEntry("Home", "index");
+const category = await getEntry("Categories", "categories");
 ---
 
 <BaseLayout title="Varsani DevBlog">
     {homepage && homepage.data && <Hero {...homepage.data} />}
 
-    <LearningPath categories={homepage?.data?.categories} />
+    <LearningPath categories={category?.data?.categories} />
     <FeaturedArticles latestArticles={homepage?.data?.latestArticles} />
 </BaseLayout>

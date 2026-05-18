@@ -18,23 +18,7 @@ stats:
   - number: ''
     label: Beginner Friendly
     icon: 🎓
-categories:
-  - title: Python
-    lessons: 40
-    image: /uploads/python.png
-    slug: /series/python
-  - title: JavaScript
-    lessons: 32
-    image: /uploads/javascript.png
-    slug: /series/javascript
-  - title: React
-    lessons: 28
-    image: /uploads/react.png
-    slug: /series/react
-  - title: Spoken English
-    lessons: 25
-    image: /uploads/english.png
-    slug: /series/english
+
 latestArticles:
   - title: Python Variables Explained
     description: Learn Python variables with simple examples and exercises.

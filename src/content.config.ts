@@ -25,14 +25,6 @@ const Home = defineCollection({
                 icon: z.string(),
             }),
         ),
-        categories: z.array(
-            z.object({
-                title: z.string(),
-                lessons: z.number(),
-                image: z.string(),
-                slug: z.string()
-            })
-        ),
         latestArticles: z.array(
             z.object({
                 title: z.string(),
@@ -47,6 +39,23 @@ const Home = defineCollection({
     }),
 });
 
+const Categories = defineCollection({
+    loader: glob({
+        base: "./src/content/series",
+        pattern: "categories.md",
+    }),
+    schema: z.object({
+        categories: z.array(
+            z.object({
+                title: z.string(),
+                lessons: z.number(),
+                image: z.string(),
+                slug: z.string(),
+            }),
+        ),
+    }),
+})
+
 const SeriesLessons = defineCollection({
     loader: glob({
         base: "./src/content/series",
@@ -55,13 +64,11 @@ const SeriesLessons = defineCollection({
 
     schema: z.object({
         title: z.string(),
-
         day: z.number(),
-
         description: z.string(),
     }),
 });
-
 export const collections = {
-    Home, SeriesLessons
+    Home, Categories, SeriesLessons
+
 };
