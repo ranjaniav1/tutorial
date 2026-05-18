@@ -27,10 +27,6 @@ categories:
     lessons: 32
     image: /uploads/javascript.png
     slug: /series/javascript
-  - title: React
-    lessons: 28
-    image: /uploads/react.png
-    slug: /series/react
   - title: Spoken English
     lessons: 25
     image: /uploads/english.png
