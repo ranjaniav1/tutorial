@@ -3,13 +3,13 @@
   /* colors */
 
   --text-primary: #1f2937;
-  --text-secondary: #4b5563;
+  --text-secondary: #515d75;
   --text-heading: #1e3a8a;
   --text-card: #fff;
   --text-button: #fff;
   --text-border: #cbd5e1;
 
-  --bg-navigation: #f8fafc;
+  --bg-navigation: #fff;
   --bg-card: #fff;
   --bg-header: #f8fafc;
   --bg-button: #e59a59;
@@ -82,9 +82,8 @@ body {
 
   font-family: var(--body-font);
 
-  line-height: 1.7;
+  line-height: 1.5;
 
-  overflow-x: hidden;
 
   -webkit-font-smoothing: antialiased;
 }
@@ -101,9 +100,6 @@ img {
   display: block;
 }
 
-ul {
-  list-style: none;
-}
 
 .container {
   width: min(100% - 2rem, var(--container));
@@ -111,9 +107,6 @@ ul {
   margin-inline: auto;
 }
 
-.main-content {
-  padding-top: var(--nav-height);
-}
 
 
 .grid {
@@ -127,14 +120,7 @@ ul {
 
 /* typography scale */
 
-  h1{
-
- font-size: clamp(2rem, 4vw, 3.5rem);
-
-        margin-bottom: 1.25rem;
-
-        letter-spacing: -2px;
-  }
+ 
 h2 {
   font-size: clamp(1rem, 2vw, 1.5rem);
 

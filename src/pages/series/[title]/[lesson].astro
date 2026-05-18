@@ -1,0 +1,363 @@
+---
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+
+import { getCollection, render } from "astro:content";
+
+export async function getStaticPaths() {
+    const lessons = await getCollection("SeriesLessons");
+
+    return lessons.map((lesson) => {
+        const [series, file] = lesson.id.split("/");
+
+        return {
+            params: {
+                title: series,
+                lesson: file.replace(".md", ""),
+            },
+
+            props: {
+                lesson,
+            },
+        };
+    });
+}
+
+const { lesson } = Astro.props;
+
+const { Content } = await render(lesson);
+
+const allLessons = await getCollection("SeriesLessons");
+
+const currentSeries = lesson.id.split("/")[0];
+
+const seriesLessons = allLessons
+    .filter((item) => item.id.startsWith(currentSeries))
+    .sort((a, b) => a.data.day - b.data.day);
+---
+
+<BaseLayout title={lesson.data.title}>
+    <div class="container">
+        <section class="series-layout">
+            <!-- sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-top">
+                    <h2>
+                        {
+                            currentSeries.charAt(0).toUpperCase() +
+                                currentSeries.slice(1)
+                        } Series
+                    </h2>
+
+                    <p>{seriesLessons.length} Lessons</p>
+                </div>
+
+                <div class="lesson-list">
+                    {
+                        seriesLessons.map((item) => {
+                            const slug = item.id.replace(".md", "");
+
+                            const isActive = item.id === lesson.id;
+
+                            return (
+                                <a
+                                    href={`/series/${slug}`}
+                                    class={`lesson-item ${isActive ? "active" : ""}`}
+                                >
+                                    <div class="lesson-day">
+                                        {item.data.day}
+                                    </div>
+
+                                    <div>
+                                        <h4>{item.data.title}</h4>
+
+                                        <p>Lesson {item.data.day}</p>
+                                    </div>
+                                </a>
+                            );
+                        })
+                    }
+                </div>
+            </aside>
+
+            <!-- content -->
+
+            <article class="content">
+                <Content />
+            </article>
+        </section>
+    </div>
+</BaseLayout>
+
+<style>
+    .series-layout {
+        display: grid;
+
+        grid-template-columns: 320px 1fr;
+
+        gap: 2rem;
+
+        background: var(--surface-soft);
+
+        padding: 2rem;
+
+        min-height: calc(100vh - var(--nav-height));
+    }
+
+    /* sidebar */
+
+    .sidebar {
+        background: var(--surface);
+
+        border: 1px solid var(--text-border);
+
+        border-radius: var(--radius-lg);
+
+        padding: 1.5rem;
+
+        position: sticky;
+
+        top: calc(var(--nav-height) + 1rem);
+
+        height: fit-content;
+        max-height: calc(100vh-120px);
+        overflow-y: auto;
+    }
+
+    .sidebar-top {
+        margin-bottom: 2rem;
+    }
+
+    .sidebar-top h2 {
+        font-size: 1.4rem;
+
+        margin-bottom: 0.35rem;
+    }
+
+    .sidebar-top p {
+        font-size: 0.95rem;
+    }
+
+    .lesson-list {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 0.75rem;
+    }
+
+    .lesson-item {
+        display: flex;
+
+        align-items: flex-start;
+
+        gap: 1rem;
+
+        padding: 1rem;
+
+        border-radius: var(--radius-md);
+
+        transition: var(--transition);
+
+        border: 1px solid transparent;
+    }
+
+    .lesson-item:hover {
+        background: var(--surface-soft);
+    }
+
+    .lesson-item.active {
+        background: rgba(30, 58, 138, 0.08);
+
+        border-color: rgba(30, 58, 138, 0.15);
+        box-shadow: var(--shadow-sm);
+    }
+
+    .lesson-day {
+        width: 34px;
+
+        height: 34px;
+
+        border-radius: 999px;
+
+        display: grid;
+
+        place-items: center;
+
+        background: var(--icon-main);
+
+        color: white;
+
+        font-size: 0.9rem;
+
+        font-weight: 600;
+
+        flex-shrink: 0;
+    }
+
+    .lesson-item h4 {
+        font-size: 0.92rem;
+
+        margin-bottom: 0.2rem;
+
+        color: var(--text-heading);
+    }
+
+    .lesson-item p {
+        font-size: 0.88rem;
+
+        line-height: 1.4;
+    }
+
+    /* content */
+
+    .content {
+        padding: 3rem;
+
+        max-width: 950px;
+
+        width: 100%;
+
+        background: var(--surface);
+
+        border-radius: var(--radius-lg);
+
+        border: 1px solid var(--text-border);
+
+        box-shadow: var(--shadow-sm);
+    }
+
+    .content :global(h1) {
+        margin-bottom: 1.5rem;
+
+        line-height: 1.1;
+        font-size: x-large;
+    }
+
+    .content :global(h2) {
+        margin-top: 3rem;
+
+        font-size: 2rem;
+    }
+
+    .content :global(p) {
+        margin-bottom: 1.05rem;
+
+        line-height: 1.9;
+        color: var(--text-secondary);
+    }
+
+    .content :global(ul),
+    .content :global(ol) {
+        padding-left: 1.5rem;
+
+        font-size: 1.05rem;
+    }
+
+    .content :global(li) {
+        margin-bottom: 0.9rem;
+
+        color: var(--text-secondary);
+    }
+    .content :global(pre) {
+        padding: 1rem;
+
+        border-radius: var(--radius-md);
+
+        overflow-x: auto;
+
+        margin: 1.5rem 0;
+        background: #0f172a;
+
+        color: #e2e8f0;
+    }
+    .content :global(:not(pre) > code) {
+        background: var(--surface-soft);
+
+        padding: 0.2rem 0.45rem;
+
+        border-radius: 6px;
+
+        font-size: 0.9em;
+    }
+
+    .content :global(code) {
+        font-family: var(--code-font);
+    }
+
+    .content :global(table) {
+        width: 100%;
+
+        border-collapse: collapse;
+
+        margin: 1.5rem 0;
+        border-radius: var(--radius-md);
+    }
+
+    .content :global(th),
+    .content :global(td) {
+        border: 1px solid var(--text-border);
+
+        padding: 0.85rem;
+
+        text-align: left;
+    }
+
+    .content :global(th) {
+        background: var(--surface-soft);
+    }
+    .content :global(hr) {
+        margin: 1rem 0;
+
+        border: none;
+
+        border-top: 1px solid var(--text-border);
+    }
+
+    .content :global(blockquote) {
+        border-left: 4px solid var(--icon-main);
+
+        padding-left: 1rem;
+
+        margin: 1.5rem 0;
+
+        color: var(--text-secondary);
+    }
+    @media (max-width: 900px) {
+        .series-layout {
+            grid-template-columns: 1fr;
+        }
+
+        .sidebar {
+            position: relative;
+
+            top: 0;
+
+            height: auto;
+        }
+
+        .content {
+            padding: 2rem 1.25rem;
+        }
+    }
+    .lesson-item:hover {
+        background: var(--surface-soft);
+
+        transform: translateX(4px);
+    }
+    .lesson-item.active {
+        border-left: 4px solid var(--icon-main);
+    }
+    .content :global(a) {
+        color: var(--text-primary);
+
+        font-weight: 500;
+
+        text-decoration: underline;
+
+        transition: var(--transition);
+    }
+
+    .content :global(a:hover) {
+        color: var(--icon-main);
+    }
+</style>

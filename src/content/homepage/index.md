@@ -6,7 +6,7 @@ description: >-
   Beginner to Advanced-  step-by-step tutorials with real examples and
   hands-on-projects.
 buttonText: Explore All Lessons
-buttonLink: /python
+buttonLink: /series/python
 image: /images/hero-py.jpg
 stats:
   - number: 24+

@@ -47,6 +47,21 @@ const Home = defineCollection({
     }),
 });
 
+const SeriesLessons = defineCollection({
+    loader: glob({
+        base: "./src/content/series",
+        pattern: "**/*.{md,mdx}",
+    }),
+
+    schema: z.object({
+        title: z.string(),
+
+        day: z.number(),
+
+        description: z.string(),
+    }),
+});
+
 export const collections = {
-    Home,
+    Home, SeriesLessons
 };
